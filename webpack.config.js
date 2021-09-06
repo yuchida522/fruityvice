@@ -17,6 +17,19 @@ module.exports = {
       },
     ],
   },
+//   devServer: {
+//     proxy: {
+//         '/fruit': {
+//             'target': 'https://www.fruityvice.com/api',
+//             'secure': false,    
+//         }
+//     },
+//     headers: {
+//         'Access-Control-Allow-Origin': '*',
+//         'Access-Control-Allow-Headers': '*',
+//         'Access-Control-Allow-Methods': '*',
+//     }
+  },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
   ],

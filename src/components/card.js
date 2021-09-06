@@ -13,13 +13,22 @@ import MoreInfoModal from './moreInfoModal';
 const FruitCard = (props) => {
     
     const [openModal, setOpenModal] = useState(false)
-    
+
+    const handleClick = async() => {
+
+        const data = await fetch('https://www.fruityvice.com/api/fruit/all', {
+            method: 'GET',
+            
+        }
+        )
+        console.log(data)
+    }
     return (
         <Card>
             <CardHeader title={props.title} />
             <CardMedia image={props.image} style={{height: 100}}/>
             <CardActions>
-              <Button onClick={()=> setOpenModal(true)} color="primary">
+              <Button onClick={()=> {setOpenModal(true); handleClick(props.title)}} color="primary">
                 More Information
               </Button>
             </CardActions>
