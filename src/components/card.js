@@ -31,7 +31,7 @@ const FruitCard = (props) => {
             <CardHeader title={props.title} />
             <CardMedia image={props.image} style={{height: 100}}/>
             <CardActions>
-              <Button onClick={()=> {setOpenModal(true); handleClick(props.title)}} color="primary">
+              <Button onClick={()=> {setOpenModal(true); handleClick()}} color="primary">
                 More Information
               </Button>
             </CardActions>
