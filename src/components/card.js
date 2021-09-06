@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -13,29 +13,37 @@ import MoreInfoModal from './moreInfoModal';
 const FruitCard = (props) => {
     
     const [openModal, setOpenModal] = useState(false)
+    const [fruitInfo, setFruitInfo] = useState({})
+    const [nutritionInfo, setNutritionInfo] = useState({})
+    console.log(fruitInfo)
+    console.log(nutritionInfo)
 
-    const handleClick = async() => {
-
-        const data = await fetch('https://www.fruityvice.com/api/fruit/all', {
-            method: 'GET',
-            mode: "cors",
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-          }
-        )
-        console.log(data)
+    const handleClick = (fruitName) => {
+        console.log("clicked")
+        fetch(`fruit/${fruitName}`)
+        .then((res) => res.json())
+        .then((data)=> {
+        setFruitInfo(data)
+        setNutritionInfo(data.nutritions)
+        }
+      )
     }
+   
     return (
         <Card>
             <CardHeader title={props.title} />
             <CardMedia image={props.image} style={{height: 100}}/>
             <CardActions>
-              <Button onClick={()=> {setOpenModal(true); handleClick()}} color="primary">
+              <Button onClick={()=> {setOpenModal(true); handleClick(props.title)}} color="primary">
                 More Information
               </Button>
             </CardActions>
-            <MoreInfoModal openModal={openModal} setOpenModal={setOpenModal}>fruit info here</MoreInfoModal>
+            <MoreInfoModal 
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+              fruitInfo={fruitInfo}
+              nutritionInfo={nutritionInfo}>
+              </MoreInfoModal>
         </Card>
     )
 }
