@@ -18,8 +18,11 @@ const FruitCard = (props) => {
 
         const data = await fetch('https://www.fruityvice.com/api/fruit/all', {
             method: 'GET',
-            
-        }
+            mode: "cors",
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+          }
         )
         console.log(data)
     }
