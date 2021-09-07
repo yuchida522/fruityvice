@@ -5,8 +5,6 @@ import Dialog from '@material-ui/core/Dialog';
 import Typography from '@material-ui/core/Typography';
 import { DialogActions } from '@material-ui/core';
 import StyledPopUp from './styledComponents/StyledPopUp';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-
 
 //pop up modal component that gives more information on the fruit that was clicked on
 const MoreInfoModal = (props) => {
