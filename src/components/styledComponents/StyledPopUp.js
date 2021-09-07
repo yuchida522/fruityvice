@@ -6,7 +6,6 @@ const StyledPopUp = withStyles({
     root: {
       height: '250px',
       width: '250px',
-      font: "'Open Sans', sans-serif",
     }
   })(DialogContent);
   

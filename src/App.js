@@ -1,8 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import FruitCard from './components/FruitInfoCard'
 import FruitImages from './fruitImages'
 
+// const theme = {
+//     root: {
+//       display: 'flex',
+//       flexWrap: 'wrap',
+//       justifyContent: 'center'
+//     },
+//     typography: {
+//       fontFamily: 'Open Sans, sans-serif',
+//     }
+//   };
 
 const App = () => {
   
@@ -12,7 +22,9 @@ const App = () => {
   for (const [fruitName, fruitImage] of Object.entries(images)) {
 
       const fruitCard = (
+    
           <FruitCard key={fruitName} title={fruitName} image={fruitImage} />
+        
       );
       renderedFruitCards.push(fruitCard)
   }

@@ -6,7 +6,6 @@ import MoreInfoModal from './moreInfoModal';
 import StyledCard from './styledComponents/StyledCard';
 import StyledImage from './styledComponents/StyledImage';
 
-
 const FruitCard = (props) => {
     
     const [openModal, setOpenModal] = useState(false)
@@ -21,16 +20,20 @@ const FruitCard = (props) => {
         .then((data)=> {
         setFruitInfo(data)
         setNutritionInfo(data.nutritions)
+        setOpenModal(true);
         }
       )
-    }
+      .catch((err) => console.warn(err));
+    };
+
    
     return (
+
         <StyledCard>
-            <CardHeader title={props.title.toUpperCase()} />
+            <CardHeader title={props.title ? props.title.toUpperCase() : null} style={{fontStyle: 'italic', color: '#4B6587'}}/>
             <StyledImage image={props.image} />
             <CardActions>
-              <Button onClick={(e)=> {setOpenModal(true); handleClick(e)}} color="primary">
+              <Button onClick={(e)=> {handleClick(e)}} color="primary">
                 More Information
               </Button>
             </CardActions>
@@ -39,8 +42,10 @@ const FruitCard = (props) => {
               setOpenModal={setOpenModal}
               fruitInfo={fruitInfo}
               nutritionInfo={nutritionInfo}>
-            </MoreInfoModal>     
+            </MoreInfoModal>
+       
         </StyledCard>
+    
     )
 }
 
