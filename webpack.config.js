@@ -19,12 +19,13 @@ module.exports = {
   },
   devServer: {
     contentBase: "./build",
-    // proxy: {
-    //   '/fruit': {
-    //     'target': 'https://www.fruityvice.com/api',
-    //     'secure': false,    
-    //   }
-    // }
+    proxy: {
+      '/fruit': {
+        'target': 'https://www.fruityvice.com/api',
+        'secure': false, 
+        'changeOrigin': true   
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({ template: path.resolve('./src/index.html') }),

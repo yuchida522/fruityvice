@@ -15,7 +15,7 @@ const FruitCard = (props) => {
     const handleClick = (e) => {
         e.preventDefault()
         console.log('clicked')
-        fetch(`https://www.fruityvice.com/api/fruit/${props.title}`)
+        fetch(`fruit/${props.title}`)
         .then((res) => res.json())
         .then((data)=> {
         setFruitInfo(data);
