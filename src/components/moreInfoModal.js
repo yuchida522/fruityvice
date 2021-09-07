@@ -13,26 +13,25 @@ const MoreInfoModal = (props) => {
     const { family } = fruitInfo;
     const { calories, carbohydrates, fat, protein, sugar } = nutritionInfo;
 
-
     return (
-        <Dialog open={openModal} >
-          <StyledPopUp>
-           <Typography variant='body1' style={{paddingTop: 30, fontSize: 20, fontFamily: 'Monospace'}}>
-               Family: {family} <br/>
-               Calories: {calories} <br/>
-               Carbohydrates: {carbohydrates}g<br/>
-               Fat: {fat}g <br/>
-               Protein: {protein}g <br/>
-               Sugar: {sugar}g <br/> 
-           </Typography>
-          </StyledPopUp>
-          <DialogActions>
-          <Button onClick={()=>setOpenModal(false)} color="primary">
-            Close
-          </Button>
-          </DialogActions>
-        </Dialog>
-    )
+    <Dialog open={openModal} >
+    <StyledPopUp>
+    <Typography variant='body1' style={{paddingTop: 30, fontSize: 20, fontFamily: 'Monospace'}}>
+        Family: {family} <br/>
+        Calories: {calories} <br/>
+        Carbohydrates: {carbohydrates}g<br/>
+        Fat: {fat}g <br/>
+        Protein: {protein}g <br/>
+        Sugar: {sugar}g <br/> 
+    </Typography>
+    </StyledPopUp>
+    <DialogActions>
+    <Button onClick={()=>setOpenModal(false)} color="primary">
+    Close
+    </Button>
+    </DialogActions>
+    </Dialog>
+  )
 }; 
 
 export default MoreInfoModal

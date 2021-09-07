@@ -1,3 +1,5 @@
+//I changed the given photo JSON to a key-value, so when I render the fruit card I can use the key (fruit
+//name) to give each card a key. I can also use that to call the API for the particular fruit clicked
 const FruitImages = {
     "apple" :"https://passport-media.s3-us-west-1.amazonaws.com/images/eng-intern-interview/apple.png",
     "apricot": "https://passport-media.s3-us-west-1.amazonaws.com/images/eng-intern-interview/apricot.png",

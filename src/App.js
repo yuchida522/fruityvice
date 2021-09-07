@@ -3,6 +3,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import FruitCard from './components/FruitInfoCard'
 import FruitImages from './fruitImages'
 
+//renders all the fruit card
 const App = () => {
   
   const [images, setImages] = useState(FruitImages)
@@ -11,10 +12,9 @@ const App = () => {
   for (const [fruitName, fruitImage] of Object.entries(images)) {
 
     const fruitCard = (
-      <FruitCard key={fruitName} title={fruitName} image={fruitImage} />
-        
-      );
-      renderedFruitCards.push(fruitCard)
+      <FruitCard key={fruitName} title={fruitName} image={fruitImage} />    
+    );
+    renderedFruitCards.push(fruitCard);
   }
 
   return (
