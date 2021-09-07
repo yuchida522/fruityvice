@@ -20,8 +20,8 @@ module.exports = {
   devServer: {
     contentBase: "./build",
     proxy: {
-      '/fruit': {
-        'target': 'https://www.fruityvice.com/api',
+      '/api/**': {
+        'target': 'https://www.fruityvice.com/',
         'secure': false, 
         'changeOrigin': true   
       }
