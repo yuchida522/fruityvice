@@ -22,6 +22,7 @@ module.exports = {
     proxy: {
       '/api': {
         'target': 'https://www.fruityvice.com/api',
+        'pathRewrite': {'^/api' : ''},
         'secure': false, 
         'changeOrigin': true   
       }
