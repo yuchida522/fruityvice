@@ -15,7 +15,7 @@ const FruitCard = (props) => {
     const handleClick = (e) => {
         e.preventDefault()
         console.log('clicked')
-        fetch(`api/fruit/${props.title}`)
+        fetch(`/api/fruit/${props.title}`)
         .then((res) => res.json())
         .then((data)=> {
         setFruitInfo(data);
