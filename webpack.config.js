@@ -21,7 +21,7 @@ module.exports = {
     contentBase: "./build",
     proxy: {
       '/api/*': {
-        'target': 'https://www.fruityvice.com/api:splat 200',
+        'target': 'https://www.fruityvice.com/api',
         'pathRewrite': {'^/api' : ''},
         'secure': false, 
         'changeOrigin': true   
