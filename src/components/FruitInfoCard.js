@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-// import Modal from '@material-ui/core/Modal';
 import MoreInfoModal from './moreInfoModal';
+import StyledCard from './styledComponents/StyledCard';
+import StyledImage from './styledComponents/StyledImage';
 
 
 const FruitCard = (props) => {
@@ -15,12 +12,10 @@ const FruitCard = (props) => {
     const [openModal, setOpenModal] = useState(false)
     const [fruitInfo, setFruitInfo] = useState({})
     const [nutritionInfo, setNutritionInfo] = useState({})
-    console.log(fruitInfo)
-    console.log(nutritionInfo)
 
-    const handleClick = (fruitName) => {
-        console.log("clicked")
-        fetch(`fruit/${fruitName}`)
+    const handleClick = (e) => {
+        e.preventDefault()
+        fetch(`fruit/${props.title}`)
         .then((res) => res.json())
         .then((data)=> {
         setFruitInfo(data)
@@ -30,11 +25,11 @@ const FruitCard = (props) => {
     }
    
     return (
-        <Card>
+        <StyledCard>
             <CardHeader title={props.title} />
-            <CardMedia image={props.image} style={{height: 100}}/>
+            <StyledImage image={props.image} />
             <CardActions>
-              <Button onClick={()=> {setOpenModal(true); handleClick(props.title)}} color="primary">
+              <Button onClick={(e)=> {setOpenModal(true); handleClick(e)}} color="primary">
                 More Information
               </Button>
             </CardActions>
@@ -43,8 +38,9 @@ const FruitCard = (props) => {
               setOpenModal={setOpenModal}
               fruitInfo={fruitInfo}
               nutritionInfo={nutritionInfo}>
-              </MoreInfoModal>
-        </Card>
+            </MoreInfoModal>
+              
+        </StyledCard>
     )
 }
 
