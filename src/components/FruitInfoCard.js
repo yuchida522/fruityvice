@@ -18,8 +18,8 @@ const FruitCard = (props) => {
         fetch(`fruit/${props.title}`)
         .then((res) => res.json())
         .then((data)=> {
-        setFruitInfo(data)
-        setNutritionInfo(data.nutritions)
+        setFruitInfo(data);
+        setNutritionInfo(data.nutritions);
         setOpenModal(true);
         }
       )
