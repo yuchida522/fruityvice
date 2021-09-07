@@ -7,9 +7,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
-    "start": "node server.js",
-    "build": "webpack"
+    "heroku-prebuild": "npm install --dev",
+    "build": "webpack --mode production",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
