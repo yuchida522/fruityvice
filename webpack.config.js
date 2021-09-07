@@ -18,7 +18,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: "./build",
+    // contentBase: "./build",
     proxy: {
       '/fruit': {
         'target': 'https://www.fruityvice.com/api',

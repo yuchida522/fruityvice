@@ -1,11 +1,10 @@
 {
   "name": "OneValley",
   "version": "1.0.0",
-  "homepage": "https://yuchida522.github.io/fruityvice/",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack serve",
     "build": "webpack --mode production"
   },
   "keywords": [],
