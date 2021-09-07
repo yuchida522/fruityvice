@@ -9,4 +9,4 @@ const StyledImage = withStyles({
     }
   })(CardMedia);
   
-  export default StyledImage
+export default StyledImage

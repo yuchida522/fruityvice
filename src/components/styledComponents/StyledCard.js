@@ -8,7 +8,7 @@ const StyledCard = withStyles({
       borderRadius: 3,
       height: '50%',
       width: '25%',
-      margin: 20
+      margin: 20,
     }
   })(Card);
   

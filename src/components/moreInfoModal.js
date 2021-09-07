@@ -8,35 +8,20 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { DialogActions } from '@material-ui/core';
-
-// const styles = (theme) => ({
-//   root: {
-//     margin: 0,
-//     padding: theme.spacing(2),
-//   },
-//   closeButton: {
-//     position: 'absolute',
-//     right: theme.spacing(1),
-//     top: theme.spacing(1),
-//     color: theme.palette.grey[500],
-//   },
-// });
+import StyledPopUp from './styledComponents/StyledPopUp';
 
 //pop up modal component that gives more information on the fruit that was clicked on
 const MoreInfoModal = (props) => {
 
-    const { openModal, setOpenModal, nutritionInfo, fruitInfo } = props;
+    const { openModal, setOpenModal, nutritionInfo, fruitInfo, children } = props;
     const { name, family } = fruitInfo;
     const { calories, carbohydrates, fat, protein, sugar } = nutritionInfo;
 
 
     return (
         <Dialog open={openModal} >
-          {/* <DialogTitle>
-            <IconButton onClick={()=>setOpenModal(false)}><CloseIcon /></IconButton>
-          </DialogTitle> */}
-          <DialogContent>
-           <Typography>
+          <StyledPopUp>
+           <Typography variant='h5' display='block' paragraph>
                Name: {name} <br/>
                Family: {family} <br/>
                calories: {calories} <br/>
@@ -45,7 +30,8 @@ const MoreInfoModal = (props) => {
                protein: {protein} <br/>
                sugar: {sugar} <br/> 
            </Typography>
-          </DialogContent>
+          {/* </DialogContent> */}
+          </StyledPopUp>
           <DialogActions>
           <Button onClick={()=>setOpenModal(false)} color="primary">
             Close

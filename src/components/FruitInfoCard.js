@@ -27,7 +27,7 @@ const FruitCard = (props) => {
    
     return (
         <StyledCard>
-            <CardHeader title={props.title} />
+            <CardHeader title={props.title.toUpperCase()} />
             <StyledImage image={props.image} />
             <CardActions>
               <Button onClick={(e)=> {setOpenModal(true); handleClick(e)}} color="primary">
@@ -39,8 +39,7 @@ const FruitCard = (props) => {
               setOpenModal={setOpenModal}
               fruitInfo={fruitInfo}
               nutritionInfo={nutritionInfo}>
-            </MoreInfoModal>
-              
+            </MoreInfoModal>     
         </StyledCard>
     )
 }
